@@ -10,7 +10,7 @@
   "I yet still work!"
   console Invalid operations followed by valid operations will execute the valid operations!
   Invalid operations like this will be ignored and won't throw an error.
-  console Use this hack to add comments! Any invalid parameters will be ignored and won't throw an error, as well.
+  console Use this hack to add comments! Invalid parameters like this will be ignored and won't throw an error, as well.
   `;
  
   const consoleRegex = /(?:^|\s+)console\s+\\?"(.+?)\\?"/gm;
