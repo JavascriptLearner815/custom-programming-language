@@ -6,15 +6,16 @@
   console "Hello, world!"
   console
   "I still work!"
-  Invalid operations like this won't throw an error.
+  Invalid operations like this will be ignored and won't throw an error.
+  console Use this hack to add comments! Any invalid parameters will be ignored and won't throw an error, as well.
   `;
  
-  const regex = /(?:^|\s+)console\s+\\?"(.+?)\\?"/gm;
+  const consoleRegex = /(?:^|\s+)console\s+\\?"(.+?)\\?"/gm;
   
   btn.addEventListener("click", () => {
     const { value } = code;
   
-    [...value.matchAll(regex)].forEach(m => console.log(m[1]));
+    [...value.matchAll(consoleRegex)].forEach(m => console.log(m[1]));
   
   });
 
