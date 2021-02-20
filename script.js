@@ -6,7 +6,7 @@
   console "Hello, world!"
   console
   "I still work!"
-  asdf console
+  jaisphpunipophao console
   "I yet still work!"
   console Invalid operations followed by valid operations will execute the valid operations!
   Invalid operations like this will be ignored and won't throw an error.
