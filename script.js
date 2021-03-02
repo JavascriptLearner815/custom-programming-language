@@ -22,6 +22,7 @@
     
     setTimeout(() => {
       alert("Code executed; remember to check your console (Ctrl+Shift+I or Command+Shift+I)!");
+    });
   });
 
 })();
