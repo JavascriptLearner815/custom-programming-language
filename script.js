@@ -6,8 +6,10 @@
   console "Hello, world!"
   console
   "I still work!"
-  jaisphpunipophao hpausidfhbpiasoeiwconsole
+  jaisphpunipophao console
   "I yet still work!"
+  jaisphpunipophao hpausidfhbpiasoeiwconsole
+  "But I don't work!"
   console Invalid operations followed by valid operations will execute the valid operations!
   Invalid operations like this will be ignored and won't throw an error.
   console Use this hack to add comments! Invalid arguments like this will be ignored and won't throw an error, as well.
