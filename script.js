@@ -19,7 +19,9 @@
     const { value } = code;
   
     [...value.matchAll(consoleRegex)].forEach(m => console.log(m[1]));
-  
+    
+    setTimeout(() => {
+      alert("Code executed; remember to check your console (Ctrl+Shift+I or Command+Shift+I)!");
   });
 
 })();
