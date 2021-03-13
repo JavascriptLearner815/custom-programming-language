@@ -3,7 +3,7 @@
 (() => {
   const code = document.querySelector("#code");
   const btn = document.querySelector("#run");
-  const globalVariabes = {};
+  const globalVariables = {};
   
   code.value = `
   console "Hello, world!"
