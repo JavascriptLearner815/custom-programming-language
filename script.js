@@ -22,18 +22,18 @@
   getvarandconsole "nothing"
   `;
  
-  const consoleRegex = /(?:^|\s+)console:?\s+\\?"(.+?)\\?";?/gim;
-  const globalVarRegex = /(?:^|\s+)globalvar:?\s+\\?"(.+?)\\?",?\s?(?:is:?|:|=)\s?\\?"(.+?)\\?"+;?/gim;
-  const globalVarNoValRegex = /(?:^|\s+)globalvar:?\s+\\?"(.+?)\\?",?\s+noval+;?/gim;
-  const getVarAndConsoleRegex = /(?:^|\s+)getvarandconsole:?\s+\\?"(.+?)\\?";?/gim;
+  const consoleRegExp = /(?:^|\s+)console:?\s+\\?"(.+?)\\?";?/gim;
+  const globalVarRegExp = /(?:^|\s+)globalvar:?\s+\\?"(.+?)\\?",?\s?(?:is:?|:|=)\s?\\?"(.+?)\\?"+;?/gim;
+  const globalVarNoValRegExp = /(?:^|\s+)globalvar:?\s+\\?"(.+?)\\?",?\s+noval+;?/gim;
+  const getVarAndConsoleRegExp = /(?:^|\s+)getvarandconsole:?\s+\\?"(.+?)\\?";?/gim;
   
   btn.addEventListener("click", () => {
     const { value } = code;
   
-    [...value.matchAll(consoleRegex)].forEach(m => console.log(m[1]));
-    [...value.matchAll(globalVarRegex)].forEach(m => globalVariables[m[1]] = m[2]);
-    [...value.matchAll(globalVarNoValRegex)].forEach(m => globalVariables[m[1]] = null);
-    [...value.matchAll(getVarAndConsoleRegex)].forEach(m => console.log(globalVariables[m[1]] ?? "Unspecified"));
+    [...value.matchAll(consoleRegExp)].forEach(m => console.log(m[1]));
+    [...value.matchAll(globalVarRegExp)].forEach(m => globalVariables[m[1]] = m[2]);
+    [...value.matchAll(globalVarNoValRegExp)].forEach(m => globalVariables[m[1]] = null);
+    [...value.matchAll(getVarAndConsoleRegExp)].forEach(m => console.log(globalVariables[m[1]] ?? "Unspecified"));
     
     setTimeout(() => {
       alert("Code executed; remember to check your console (Ctrl+Shift+I or Command+Shift+I)!");
