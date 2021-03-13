@@ -1,6 +1,7 @@
 (() => {
   const code = document.querySelector("#code");
   const btn = document.querySelector("#run");
+  const globalVariabes = {};
   
   code.value = `
   console "Hello, world!"
@@ -15,12 +16,18 @@
   console Use this hack to add comments! Invalid arguments like this will be ignored and won't throw an error, as well.
   `;
  
-  const consoleRegex = /(?:^|\s+)console\s+\\?"(.+?)\\?"/gm;
+  const consoleRegex = /(?:^|\s+)console:?\s+\\?"(.+?)\\?";?/gm;
+  const globalVarRegex = /(?:^|\s+)globalvar:?\s+\\?"(.+?)\\?",?\s+is:?\s+\\?"(.+?)\\?"+;?/gm;
+  const globalVarNoValRegex = /(?:^|\s+)globalvar:?\s+\\?"(.+?)\\?",?\s+noval+;?/gm;
+  const getVarAndConsoleRegex = /(?:^|\s+)getvarandconsole:?\s+\\?"(.+?)\\?";?/gm;
   
   btn.addEventListener("click", () => {
     const { value } = code;
   
     [...value.matchAll(consoleRegex)].forEach(m => console.log(m[1]));
+    [...value.matchAll(globalVarRegex)].forEach(m => globalVariables[m[1]] = m[2]);
+    [...value.matchAll(globalVarNoValRegex)].forEach(m => globalVariables[m[1]] = null);
+    [...value.matchAll(getVarAndConsoleRegex)].forEach(m => console.log(globalVariables[m[1]]);
     
     setTimeout(() => {
       alert("Code executed; remember to check your console (Ctrl+Shift+I or Command+Shift+I)!");
