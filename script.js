@@ -22,7 +22,7 @@
   `;
  
   const consoleRegex = /(?:^|\s+)console:?\s+\\?"(.+?)\\?";?/gm;
-  const globalVarRegex = /(?:^|\s+)globalvar:?\s+\\?"(.+?)\\?",?\s?(is:?|:|=)\s?\\?"(.+?)\\?"+;?/gm;
+  const globalVarRegex = /(?:^|\s+)globalvar:?\s+\\?"(.+?)\\?",?\s?(?:is:?|:|=)\s?\\?"(.+?)\\?"+;?/gm;
   const globalVarNoValRegex = /(?:^|\s+)globalvar:?\s+\\?"(.+?)\\?",?\s+noval+;?/gm;
   const getVarAndConsoleRegex = /(?:^|\s+)getvarandconsole:?\s+\\?"(.+?)\\?";?/gm;
   
