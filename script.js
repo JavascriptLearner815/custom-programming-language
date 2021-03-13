@@ -29,7 +29,7 @@
     [...value.matchAll(consoleRegex)].forEach(m => console.log(m[1]));
     [...value.matchAll(globalVarRegex)].forEach(m => globalVariables[m[1]] = m[2]);
     [...value.matchAll(globalVarNoValRegex)].forEach(m => globalVariables[m[1]] = null);
-    [...value.matchAll(getVarAndConsoleRegex)].forEach(m => console.log(globalVariables[m[1]]);
+    [...value.matchAll(getVarAndConsoleRegex)].forEach(m => console.log(globalVariables[m[1]]));
     
     setTimeout(() => {
       alert("Code executed; remember to check your console (Ctrl+Shift+I or Command+Shift+I)!");
