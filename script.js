@@ -22,10 +22,10 @@
   getvarandconsole "nothing"
   `;
  
-  const consoleRegex = /(?:^|\s+)console:?\s+\\?"(.+?)\\?";?/gm;
-  const globalVarRegex = /(?:^|\s+)globalvar:?\s+\\?"(.+?)\\?",?\s?(?:is:?|:|=)\s?\\?"(.+?)\\?"+;?/gm;
-  const globalVarNoValRegex = /(?:^|\s+)globalvar:?\s+\\?"(.+?)\\?",?\s+noval+;?/gm;
-  const getVarAndConsoleRegex = /(?:^|\s+)getvarandconsole:?\s+\\?"(.+?)\\?";?/gm;
+  const consoleRegex = /(?:^|\s+)console:?\s+\\?"(.+?)\\?";?/gim;
+  const globalVarRegex = /(?:^|\s+)globalvar:?\s+\\?"(.+?)\\?",?\s?(?:is:?|:|=)\s?\\?"(.+?)\\?"+;?/gim;
+  const globalVarNoValRegex = /(?:^|\s+)globalvar:?\s+\\?"(.+?)\\?",?\s+noval+;?/gim;
+  const getVarAndConsoleRegex = /(?:^|\s+)getvarandconsole:?\s+\\?"(.+?)\\?";?/gim;
   
   btn.addEventListener("click", () => {
     const { value } = code;
