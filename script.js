@@ -16,10 +16,13 @@
   console Invalid operations followed by valid operations will execute the valid operations!
   Invalid operations like this will be ignored and won't throw an error.
   console Use this hack to add comments! Invalid arguments like this will be ignored and won't throw an error, as well.
+  globalvar "hellothere" is "Some text"
+  globalvar "nothing" noval
+  getvarandconsole "hellothere"
   `;
  
   const consoleRegex = /(?:^|\s+)console:?\s+\\?"(.+?)\\?";?/gm;
-  const globalVarRegex = /(?:^|\s+)globalvar:?\s+\\?"(.+?)\\?",?\s+is:?\s+\\?"(.+?)\\?"+;?/gm;
+  const globalVarRegex = /(?:^|\s+)globalvar:?\s+\\?"(.+?)\\?",?\s?(is:?|:|=)\s?\\?"(.+?)\\?"+;?/gm;
   const globalVarNoValRegex = /(?:^|\s+)globalvar:?\s+\\?"(.+?)\\?",?\s+noval+;?/gm;
   const getVarAndConsoleRegex = /(?:^|\s+)getvarandconsole:?\s+\\?"(.+?)\\?";?/gm;
   
