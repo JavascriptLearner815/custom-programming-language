@@ -1,3 +1,5 @@
+// Helped by https://stackoverflow.com/a/66191686/13900902
+
 (() => {
   const code = document.querySelector("#code");
   const btn = document.querySelector("#run");
