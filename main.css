@@ -1,5 +1,9 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 body {
   background: chocolate;
+  font-family: monospace;
 }
 textarea {
   width: 50vw;
