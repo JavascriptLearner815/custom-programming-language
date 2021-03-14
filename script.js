@@ -23,11 +23,11 @@
   getvarandconsole "nothing"
   `;
  
-  const consoleRegExp = /(?:^|\s+)console:?\s+\\?"(.+?)\\?";?/gim;
-  const globalVarRegExp = /(?:^|\s+)globalvar:?\s+\\?"(.+?)\\?",?\s?(?:is:?|:|=)\s?\\?"(.+?)\\?"+;?/gim;
-  const globalVarNoValRegExp = /(?:^|\s+)globalvar:?\s+\\?"(.+?)\\?",?\s+noval+;?/gim;
-  const getVarAndConsoleRegExp = /(?:^|\s+)getvarandconsole:?\s+\\?"(.+?)\\?";?/gim;
-  const commentRegExp = /(?:^|\s+):\s?([^:]*);?/gim;
+  const consoleRegExp = /(?:^|\s+)console:?\s+\\?"(.+?)\\?";?/gim; // https://regexr.com/5ogul
+  const globalVarRegExp = /(?:^|\s+)globalvar:?\s+\\?"(.+?)\\?",?\s?(?:is:?|:|=)\s?\\?"(.+?)\\?"+;?/gim; // https://regexr.com/5oguo
+  const globalVarNoValRegExp = /(?:^|\s+)globalvar:?\s+\\?"(.+?)\\?",?\s+noval+;?/gim; // https://regexr.com/5ogv1
+  const getVarAndConsoleRegExp = /(?:^|\s+)getvarandconsole:?\s+\\?"(.+?)\\?";?/gim; // https://regexr.com/5ogv7
+  const commentRegExp = /(?:^|\s+):\s?([^:]*);?/gim; // https://regexr.com/5ogva
   
   btn.addEventListener("click", () => {
     const { value } = code;
