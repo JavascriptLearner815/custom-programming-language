@@ -1,4 +1,5 @@
 // Helped by https://stackoverflow.com/a/66191686/13900902
+// And by https://regexr.com/
 
 (() => {
   const code = document.querySelector("#code");
