@@ -21,6 +21,9 @@
   globalvar "nothing" noval
   getvarandconsole "hellothere"
   getvarandconsole "nothing"
+  stop
+  : This code won't run... :
+  console "you're an idiot"
   `;
  
   const consoleRegExp = /(?:^|\s+)console:?\s+\\?"(.+?)\\?";?/gim; // https://regexr.com/5ogul
@@ -28,6 +31,7 @@
   const globalVarNoValRegExp = /(?:^|\s+)globalvar:?\s+\\?"(.+?)\\?",?\s+noval+;?/gim; // https://regexr.com/5ogv1
   const getVarAndConsoleRegExp = /(?:^|\s+)getvarandconsole:?\s+\\?"(.+?)\\?";?/gim; // https://regexr.com/5ogv7
   const commentRegExp = /(?:^|\s+):\s?([^:]*);?/gim; // https://regexr.com/5ogva
+  const stopRegExp = /(?:^|\s+)stop;?/gim; // https://regexr.com/5p839
   
   btn.addEventListener("click", () => {
     const { value } = code;
@@ -39,6 +43,10 @@
     [...value.matchAll(commentRegExp)].forEach(m => {
       ;
     });
+    /* TODO: [...value.matchAll(stopRegExp)].forEach(m => {
+                                                                         
+    });
+    The problem is that the code is not ensured to be run with the stop in the desired order. Please go tell me in Discussions if you know a fix. */
     
     setTimeout(() => {
       alert("Code executed; remember to check your console (Ctrl+Shift+I or Command+Shift+I, then press \"Console\")!");
