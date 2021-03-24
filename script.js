@@ -47,7 +47,7 @@
       if (!stopped) globalVariables[m[1]] = null;
     });
     [...value.matchAll(getVarAndConsoleRegExp)].forEach(m => {
-      if (!stopped) console.log(globalVariables[m[1]] ?? "Unspecified"));
+      if (!stopped) console.log(globalVariables[m[1]] ?? "Unspecified");
     });
     [...value.matchAll(commentRegExp)].forEach(m => {
       ;
