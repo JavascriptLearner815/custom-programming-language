@@ -35,18 +35,27 @@
   
   btn.addEventListener("click", () => {
     const { value } = code;
+    let stopped = false;
   
-    [...value.matchAll(consoleRegExp)].forEach(m => console.log(m[1]));
-    [...value.matchAll(globalVarRegExp)].forEach(m => globalVariables[m[1]] = m[2]);
-    [...value.matchAll(globalVarNoValRegExp)].forEach(m => globalVariables[m[1]] = null);
-    [...value.matchAll(getVarAndConsoleRegExp)].forEach(m => console.log(globalVariables[m[1]] ?? "Unspecified"));
+    [...value.matchAll(consoleRegExp)].forEach(m => {
+      if (!stopped) console.log(m[1]);
+    });
+    [...value.matchAll(globalVarRegExp)].forEach(m => {
+      if (!stopped) globalVariables[m[1]] = m[2];
+    });
+    [...value.matchAll(globalVarNoValRegExp)].forEach(m => {
+      if (!stopped) globalVariables[m[1]] = null;
+    });
+    [...value.matchAll(getVarAndConsoleRegExp)].forEach(m => {
+      if (!stopped) console.log(globalVariables[m[1]] ?? "Unspecified"));
+    });
     [...value.matchAll(commentRegExp)].forEach(m => {
       ;
     });
-    /* TODO: [...value.matchAll(stopRegExp)].forEach(m => {
-                                                                         
+    [...value.matchAll(stopRegExp)].forEach(m => {
+      stopped = true;
     });
-    The problem is that the code is not ensured to be run with the stop in the desired order. Please go tell me in Discussions if you know a fix. */
+    // The problem is that the code is not ensured to be run with the stop in the desired order. Please go tell me in Discussions if you know a fix.
     
     setTimeout(() => {
       alert("Code executed; remember to check your console (Ctrl+Shift+I or Command+Shift+I, then press \"Console\")!");
