@@ -53,9 +53,8 @@
       ;
     });
     [...value.matchAll(stopRegExp)].forEach(m => {
-      stopped = true;
+      stopped = true; // The problem is that the code is not ensured to be run with the stop in the desired order. Please go tell me in Discussions if you know a fix.
     });
-    // The problem is that the code is not ensured to be run with the stop in the desired order. Please go tell me in Discussions if you know a fix.
     
     setTimeout(() => {
       alert("Code executed; remember to check your console (Ctrl+Shift+I or Command+Shift+I, then press \"Console\")!");
